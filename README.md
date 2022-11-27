@@ -1,3 +1,3 @@
 # ansible
 
-This information is from Jay LaCroix's "Getting Started with Anisble" series
+This information was recorded from Jay LaCroix's "Getting Started with Anisble" series on YouTube.
