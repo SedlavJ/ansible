@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks: 
+
+  - name: update packages
+    yum: 
+      update_cache: yes
+
+  - name: upgrade packages
+    yum:
+      update_only: true
+
