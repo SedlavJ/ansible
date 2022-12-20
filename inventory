@@ -6,3 +6,6 @@ server2
 
 [db_servers]
 server3
+
+[workstations]
+server2
