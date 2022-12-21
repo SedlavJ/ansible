@@ -4,19 +4,30 @@
   become: true
   pre_tasks: 
 
-  - name: install updates (Rocky Linux)
+  - name: Update repo cache (Rocky Linux)
     tags: always
     dnf:
-      update_only: yes
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "Rocky"
 
-  - name: install updates (Ubuntu)
+  - name: Update repo cache (Ubuntu)
     tags: always
     apt:
-      upgrade: dist
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "Ubuntu"
+
+
+- hosts: all
+  become: true
+  tasks:
+
+    - name: Add SSH key for jeanette
+      tags: always
+      authorized_key:
+        user: jeanette
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFOG3Msi4lPvBsNsC6MOrU9NfbAXKaa8xFj5/8btfuio ansible"
 
 
 - hosts: workstations
