@@ -1,0 +1,4 @@
+- name: Add SSH key for Jeanette
+  authorized_key:
+    user: jeanette
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFOG3Msi4lPvBsNsC6MOrU9NfbAXKaa8xFj5/8btfuio ansible" 
